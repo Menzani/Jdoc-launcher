@@ -9,14 +9,9 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     StartupInfo.cb = sizeof StartupInfo;
 
     wchar_t lpCommandLine[] = L"javaw -jar Jdoc.jar";
+    LPCWSTR lpCurrentDirectory = L"C:\\Apps\\Jdoc";
 
-#pragma warning(suppress : 4996)
-    std::string lpCurrentDirectory = getenv("USERPROFILE");
-    lpCurrentDirectory.append("\\Jdoc");
-    std::wstring lpCurrentDirectoryW = std::wstring(lpCurrentDirectory.begin(), lpCurrentDirectory.end());
-    LPCWSTR lpCurrentDirectoryLPCW = lpCurrentDirectoryW.c_str();
-
-    if (CreateProcess(NULL, lpCommandLine, NULL, NULL, FALSE, 0, NULL, lpCurrentDirectoryLPCW, &StartupInfo, &ProcessInfo))
+    if (CreateProcess(NULL, lpCommandLine, NULL, NULL, FALSE, 0, NULL, lpCurrentDirectory, &StartupInfo, &ProcessInfo))
     {
         CloseHandle(ProcessInfo.hThread);
         CloseHandle(ProcessInfo.hProcess);
