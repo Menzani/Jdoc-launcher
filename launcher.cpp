@@ -8,7 +8,7 @@ int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     ZeroMemory(&StartupInfo, sizeof(StartupInfo));
     StartupInfo.cb = sizeof StartupInfo;
 
-    wchar_t lpCommandLine[] = L"javaw -jar Jdoc.jar";
+    wchar_t lpCommandLine[] = L"javaw -cp Jdoc.jar;lib/*;C:/Libs/* eu.menzani.jdoc.App";
     LPCWSTR lpCurrentDirectory = L"C:\\Apps\\Jdoc";
 
     if (CreateProcess(NULL, lpCommandLine, NULL, NULL, FALSE, 0, NULL, lpCurrentDirectory, &StartupInfo, &ProcessInfo))
