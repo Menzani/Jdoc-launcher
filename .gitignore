@@ -1,9 +1,1 @@
-*
-!*.sln
-!*.rc
-!*.vcxproj
-!*.filters
-!*.cpp
-!*.h
-!*.ico
-!.gitignore
+CMakeLists.txt.user 
